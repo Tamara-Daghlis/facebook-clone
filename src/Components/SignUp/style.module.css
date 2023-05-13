@@ -1,0 +1,13 @@
+.formStyle {
+  margin: 0px auto 30px;
+  padding: 20px;
+  width: 432px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.imgStyle {
+  height: 80px;
+  width: 400px;
+  text-align: center;
+}
