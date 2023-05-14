@@ -7,6 +7,7 @@ import SignUpInfo from "./SignUpInfo";
 import TextFielSection from "./TextFieldSection";
 import SeclectSection from "./SelectSection";
 import RadioSection from "./RadioSection";
+import { validate } from "../SignUp/signUpValidation";
 
 const SignUp = () => {
   const [userInfo, setUserInfo] = useState({
@@ -19,6 +20,8 @@ const SignUp = () => {
     year: 2023,
     gender: "",
   });
+
+  const [validationMessage, setValidationMessage] = useState({});
 
   const { firstName, lastName, email, password, month, day, year, gender } =
     userInfo;
@@ -35,6 +38,11 @@ const SignUp = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     console.log(userInfo);
+  };
+
+  const ValidateForm = () => {
+    const errors = validate(userInfo);
+    setValidationMessage(errors);
   };
 
   return (
@@ -58,6 +66,7 @@ const SignUp = () => {
             lastName={lastName}
             email={email}
             password={password}
+            validationMessage={validationMessage}
           />
 
           <Typography
@@ -95,6 +104,7 @@ const SignUp = () => {
             size="large"
             color="success"
             type="submit"
+            onClick={ValidateForm}
           >
             Sign Up
           </Button>

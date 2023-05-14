@@ -3,7 +3,16 @@ import CustomTextField from "../../CustomTextField";
 import { Stack } from "@mui/material";
 
 const TextFielSection = memo(
-  ({ handleInput, firstName, lastName, email, password }) => {
+  ({
+    handleInput,
+    firstName,
+    lastName,
+    email,
+    password,
+    validationMessage,
+  }) => {
+    const { firstNameError, lastNameError, emailError, passwordError } =
+      validationMessage;
     return (
       <div>
         <Stack direction={"row"} spacing={2}>
@@ -13,6 +22,7 @@ const TextFielSection = memo(
             name="firstName"
             onChange={handleInput}
             value={firstName}
+            validationMessage={firstNameError}
           />
           <CustomTextField
             type="text"
@@ -20,6 +30,7 @@ const TextFielSection = memo(
             name="lastName"
             onChange={handleInput}
             value={lastName}
+            validationMessage={lastNameError}
           />
         </Stack>
 
@@ -30,6 +41,7 @@ const TextFielSection = memo(
           value={email}
           name="email"
           fullWidth
+          validationMessage={emailError}
         />
 
         <CustomTextField
@@ -39,6 +51,7 @@ const TextFielSection = memo(
           value={password}
           name="password"
           fullWidth
+          validationMessage={passwordError}
         />
       </div>
     );
