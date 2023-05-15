@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { RadioGroup, FormControlLabel, Radio } from "@mui/material";
 import styles from "./style.module.css";
+import { Gender } from "../../../Data/signUpRadioData";
 
 const RadioSection = memo(({ gender, handleInput }) => {
   const { radioStyle } = styles;
@@ -13,30 +14,19 @@ const RadioSection = memo(({ gender, handleInput }) => {
         value={gender}
         onChange={handleInput}
       >
-        <FormControlLabel
-          className={radioStyle}
-          value="female"
-          control={<Radio />}
-          label="Female"
-          fullWidth
-          labelPlacement="start"
-        />
-        <FormControlLabel
-          className={radioStyle}
-          value="male"
-          control={<Radio />}
-          label="Male"
-          fullWidth
-          labelPlacement="start"
-        />
-        <FormControlLabel
-          className={radioStyle}
-          value="custom"
-          control={<Radio />}
-          label="Custom"
-          fullWidth
-          labelPlacement="start"
-        />
+        {Gender.map(({ value, label }) => {
+          return (
+            <FormControlLabel
+              classes={{ root: radioStyle }}
+              //   className={radioStyle}
+              value={value}
+              control={<Radio />}
+              label={label}
+              fullWidth
+              labelPlacement="start"
+            />
+          );
+        })}
       </RadioGroup>
     </div>
   );

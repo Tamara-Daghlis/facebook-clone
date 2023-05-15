@@ -5,7 +5,7 @@ import logoImg from "../../img/face-book.svg";
 import styles from "./style.module.css";
 import SignUpInfo from "./SignUpInfo";
 import TextFielSection from "./TextFieldSection";
-import SeclectSection from "./SelectSection";
+import SelectSection from "./SelectSection";
 import RadioSection from "./RadioSection";
 import { validate } from "../SignUp/signUpValidation";
 
@@ -78,7 +78,7 @@ const SignUp = () => {
             Birthday
           </Typography>
 
-          <SeclectSection
+          <SelectSection
             handleInput={handleInput}
             month={month}
             day={day}

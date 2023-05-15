@@ -5,7 +5,7 @@ const CustomTextField = memo(
   ({ type, placeholder, onChange, value, name, validationMessage }) => {
     return (
       <TextField
-        sx={{ mb: 2 }}
+        sx={{ mb: 1.5 }}
         type={type}
         variant="outlined"
         placeholder={placeholder}
@@ -15,7 +15,12 @@ const CustomTextField = memo(
         size="small"
         fullWidth
         error={validationMessage}
-        helperText={validationMessage}
+        helperText={validationMessage || " "}
+        FormHelperTextProps={{
+          style: {
+            height: "5px",
+          },
+        }}
       />
     );
   }

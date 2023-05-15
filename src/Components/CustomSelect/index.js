@@ -11,6 +11,11 @@ const CustomSelect = memo(({ menuItemData, onChange, value, name }) => {
       name={name}
       size="small"
       fullWidth
+      MenuProps={{
+        style: {
+          maxHeight: "300px",
+        },
+      }}
     >
       {menuItemData.map((item) => {
         return <MenuItem value={item}>{item}</MenuItem>;

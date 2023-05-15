@@ -3,7 +3,7 @@ import { Stack } from "@mui/material";
 import CustomSelect from "../../CustomSelect";
 import { monthData, daysData, yearsData } from "../../../Data/signUpSelectData";
 
-const SeclectSection = memo(({ handleInput, month, day, year }) => {
+const SelectSection = memo(({ handleInput, month, day, year }) => {
   return (
     <div>
       <Stack direction={"row"} spacing={2}>
@@ -30,4 +30,4 @@ const SeclectSection = memo(({ handleInput, month, day, year }) => {
   );
 });
 
-export default SeclectSection;
+export default SelectSection;
