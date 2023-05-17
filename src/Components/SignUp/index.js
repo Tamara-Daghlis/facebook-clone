@@ -8,6 +8,7 @@ import TextFielSection from "./TextFieldSection";
 import SelectSection from "./SelectSection";
 import RadioSection from "./RadioSection";
 import { validate } from "../SignUp/signUpValidation";
+import { useAuth } from "../../Context/AuthContext";
 
 const SignUp = () => {
   const [userInfo, setUserInfo] = useState({
@@ -22,11 +23,13 @@ const SignUp = () => {
   });
 
   const [validationMessage, setValidationMessage] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const { firstName, lastName, email, password, month, day, year, gender } =
     userInfo;
 
   const { imgStyle, formStyle } = styles;
+  const { signup } = useAuth();
 
   const handleInput = (e) => {
     setUserInfo({
@@ -35,9 +38,16 @@ const SignUp = () => {
     });
   };
 
-  const handleSubmitForm = (e) => {
+  const handleSubmitForm = async (e) => {
     e.preventDefault();
-    console.log(userInfo);
+
+    try {
+      setLoading(true);
+      await signup(email, password);
+    } catch (error) {
+      console.error(error);
+    }
+    setLoading(false);
   };
 
   const ValidateForm = () => {
@@ -105,6 +115,7 @@ const SignUp = () => {
             color="success"
             type="submit"
             onClick={ValidateForm}
+            disabled={loading}
           >
             Sign Up
           </Button>
