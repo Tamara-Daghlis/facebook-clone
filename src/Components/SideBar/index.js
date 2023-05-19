@@ -1,7 +1,7 @@
 import React from "react";
 import { List } from "@mui/material";
 import { useAuth } from "../../Context/AuthContext";
-import SideBarRow from "../SideBarItem";
+import SideBarRow from "../SideBarIRow";
 import { sideBareData } from "../../Data/sideBarData";
 import styles from "./style.module.css";
 

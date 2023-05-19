@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Stack, List, Box } from "@mui/material";
 import { RightSideBarIcons } from "../../Data/RightSideBarIcons";
-import SideBarRow from "../SideBarItem";
+import SideBarRow from "../SideBarIRow";
 
 const RightSideBar = ({ onlineUsers }) => {
   return (
