@@ -38,6 +38,7 @@ const CustomCard = styled(Card)({
   "&:hover": {
     transform: "scale(1.07)",
   },
+  marginRight: "10px",
 });
 
 const CustomTypography = styled(Typography)({

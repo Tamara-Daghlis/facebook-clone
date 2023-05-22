@@ -47,11 +47,11 @@ const SideBarRow = ({ src, title, online }) => {
             anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
             variant="dot"
           >
-            <Avatar alt="Remy Sharp" src={src} />
+            <Avatar alt="online user" src={src} />
           </StyledBadge>
         ) : (
           <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src={src} sizes="small" />
+            <Avatar alt="icon" src={src} sizes="small" />
           </ListItemAvatar>
         )}
         <ListItemText primary={title} />

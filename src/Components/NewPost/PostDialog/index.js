@@ -19,7 +19,6 @@ import CloseIcon from "@mui/icons-material/Close";
 const AddNewPostButton = styled(Button)({
   borderRadius: "20px",
   background: "rgb(243, 243, 243)",
-  width: "100%",
   color: "gray",
   "&:hover": {
     background: "rgb(230, 230, 230)",

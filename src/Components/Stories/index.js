@@ -5,7 +5,7 @@ const Stories = ({ Stories, CurrentUserIamge }) => {
   return (
     <div>
       <Story CurrentUserIamge={CurrentUserIamge}></Story>
-      {Stories.map(({ friendImage, friendName, storyImage }) => {
+      {Stories?.map(({ friendImage, friendName, storyImage }) => {
         return (
           <Story
             friendIamge={friendImage}

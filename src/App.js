@@ -9,15 +9,14 @@ import Story from "./Components/Story";
 import image from "./img/download.png";
 import PostDialog from "./Components/NewPost/PostDialog";
 import NewPost from "./Components/NewPost";
+import Post from "./Components/Post";
+import HomePage from "./Pages/HomePage";
 
 function App() {
   return (
     <AuthProvider>
       <div className="App">
-        <SideBar />
-        <RightSideBar />
-        <Story CurrentUserIamge={image} />
-        <NewPost />
+        <HomePage />
       </div>
     </AuthProvider>
   );
