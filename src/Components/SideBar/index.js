@@ -7,21 +7,17 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 
 const SideBarBox = styled(Box)({
-  top: 0,
-  height: "100vh",
+  top: "64px",
+  height: "calc(100vh - 64px)",
   position: "sticky",
-  flex: 0.5,
+  paddingTop: "20px",
+  flex: ".5",
   overflowY: "scroll",
-  display: {
-    // xs: "none",
-    md: "block",
-  },
-
   "&::-webkit-scrollbar": {
     width: "10px",
   },
   "&::-webkit-scrollbar-track": {
-    background: "#f1f1f1",
+    background: "#cacaca",
   },
   "&::-webkit-scrollbar-thumb": {
     borderRadius: "10px",
@@ -33,7 +29,14 @@ const SideBar = () => {
   const { currentUser } = useAuth;
 
   return (
-    <SideBarBox>
+    <SideBarBox
+      sx={{
+        display: {
+          xs: "none",
+          md: "block",
+        },
+      }}
+    >
       {/* the src and user name should taken from current user  */}
       <SideBarRow />
       <List>

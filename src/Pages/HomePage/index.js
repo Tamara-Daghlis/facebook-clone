@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import SideBar from "../../Components/SideBar";
 import Stories from "../../Components/Stories";
 import NewPost from "../../Components/NewPost";
@@ -8,16 +8,21 @@ import Post from "../../Components/Post";
 
 const HomePage = () => {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Stack
+      direction={"row"}
+      spacing={2}
+      marginTop={"64px"}
+      sx={{ background: "#E1E1E1" }}
+    >
       <SideBar />
-      <Box sx={{ flex: 2 }}>
+      <Box sx={{ flex: 1.5 }}>
         <Stories />
         <NewPost />
         <Post />
       </Box>
 
       <RightSideBar />
-    </Box>
+    </Stack>
   );
 };
 

@@ -1,15 +1,11 @@
-import like from "../img/reactions/like.svg";
-import love from "../img/reactions/love.svg";
-import haha from "../img/reactions/haha.svg";
-
 export const recationsData = [
   {
-    icon: like,
+    icon: "/images/reactions/like.svg",
   },
   {
-    icon: love,
+    icon: "/images/reactions/love.svg",
   },
   {
-    icon: haha,
+    icon: "/images/reactions/haha.svg",
   },
 ];

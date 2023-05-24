@@ -54,7 +54,7 @@ const SideBarRow = ({ src, title, online }) => {
             <Avatar alt="icon" src={src} sizes="small" />
           </ListItemAvatar>
         )}
-        <ListItemText primary={title} />
+        <ListItemText primary={title} sx={{ marginLeft: "10px" }} />
       </ListItemButton>
     </div>
   );

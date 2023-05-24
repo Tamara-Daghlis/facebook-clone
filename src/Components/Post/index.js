@@ -1,10 +1,9 @@
 import React from "react";
 import { Card, Avatar, Typography, Stack, CardMedia } from "@mui/material";
-import img from "../../img/download.png";
 
 import PostLikesAndCommints from "./PostLikesAndCommints";
 
-const Post = ({ userImage, userName }) => {
+const Post = ({ userImage, userName, PostIamge }) => {
   return (
     <Card sx={{ width: "100%" }}>
       <Stack direction={"row"} spacing={2} margin={2}>
@@ -18,7 +17,12 @@ const Post = ({ userImage, userName }) => {
         "post text : hiiiiii"
       </Typography>
 
-      <CardMedia component="img" image={img} alt="post" height={"250px"} />
+      <CardMedia
+        component="img"
+        image={PostIamge}
+        alt="post"
+        height={"250px"}
+      />
       <PostLikesAndCommints />
     </Card>
   );

@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 import SideBarRow from "../../SideBarIRow";
-import img from "../../../img/download.png";
 import DialogIcons from "../DialogIcons";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -25,7 +24,7 @@ const AddNewPostButton = styled(Button)({
   },
 });
 
-const PostDialog = ({ currentUserName }) => {
+const PostDialog = ({ currentUserName, CurrentUserImage }) => {
   const [open, setOpen] = useState(false);
   const [postText, setPostText] = useState("");
 
@@ -65,7 +64,7 @@ const PostDialog = ({ currentUserName }) => {
         <Divider />
 
         <DialogContent>
-          <SideBarRow src={img} title={currentUserName} />
+          <SideBarRow src={CurrentUserImage} title={currentUserName} />
           <TextField
             labelId="demo-simple-select-label"
             id="demo-simple-select"

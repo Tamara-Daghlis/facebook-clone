@@ -1,90 +1,76 @@
-import friends from "../img/sideBarImages/friends.png";
-import mostRecent from "../img/sideBarImages/mostRecents.png";
-import messenger from "../img/sideBarImages/messenger.png";
-import events from "../img/sideBarImages/events.png";
-import favorites from "../img/sideBarImages/favorites.png";
-import friendsList from "../img/sideBarImages/friendsList.png";
-import games from "../img/sideBarImages/games.png";
-import groups from "../img/sideBarImages/groups.png";
-import marketplace from "../img/sideBarImages/marketplace.png";
-import memories from "../img/sideBarImages/memories.png";
-import pages from "../img/sideBarImages/pages.png";
-import videos from "../img/sideBarImages/videos.png";
-import weathers from "../img/sideBarImages/weathers.png";
-
 export const sideBareData = [
   {
     id: 1,
     title: "Friends",
-    src: friends,
+    src: "/images/sideBarImages/friends.png",
   },
 
   {
     id: 2,
     title: "Most Recent",
-    src: mostRecent,
+    src: "/images/sideBarImages/mostRecents.png",
   },
 
   {
     id: 3,
     title: "Messenger",
-    src: messenger,
+    src: "/images/sideBarImages/messenger.png",
   },
 
   {
     id: 4,
     title: "Events",
-    src: events,
+    src: "/images/sideBarImages/events.png",
   },
 
   {
     id: 5,
     title: "Favorites",
-    src: favorites,
+    src: "/images/sideBarImages/favorites.png",
   },
 
   {
     id: 6,
     title: "friends List",
-    src: friendsList,
+    src: "/images/sideBarImages/friendsList.png",
   },
 
   {
     id: 7,
     title: "Games",
-    src: games,
+    src: "/images/sideBarImages/games.png",
   },
 
   {
     id: 8,
     title: "Groups",
-    src: groups,
+    src: "/images/sideBarImages/groups.png",
   },
   {
     id: 9,
     title: "Market Place",
-    src: marketplace,
+    src: "/images/sideBarImages/marketplace.png",
   },
 
   {
     id: 10,
     title: "Memories",
-    src: memories,
+    src: "/images/sideBarImages/memories.png",
   },
 
   {
     id: 11,
     title: "Pages",
-    src: pages,
+    src: "/images/sideBarImages/pages.png",
   },
   {
     id: 12,
     title: "Videos",
-    src: videos,
+    src: "/images/sideBarImages/videos.png",
   },
   {
     id: 13,
     title: "Weathers",
-    src: weathers,
+    src: "/images/sideBarImages/weathers.png",
   },
 ];

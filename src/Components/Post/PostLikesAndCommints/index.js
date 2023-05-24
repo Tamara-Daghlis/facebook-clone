@@ -1,13 +1,6 @@
 import React from "react";
 import { recationsData } from "../../../Data/ReactionsData";
-import {
-  Stack,
-  List,
-  ListItemIcon,
-  Typography,
-  Divider,
-  Box,
-} from "@mui/material";
+import { Stack, List, ListItemIcon, Typography, Divider } from "@mui/material";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
@@ -33,9 +26,7 @@ const PostLikesAndCommints = () => {
           50
         </Typography>
       </Stack>
-
       <Divider margin={2} variant="middle" />
-
       <CardBox>
         <Stack direction={"row"} spacing={1} padding={2}>
           <ThumbUpOutlinedIcon onClick={handleLike} />

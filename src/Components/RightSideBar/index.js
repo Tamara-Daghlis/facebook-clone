@@ -5,7 +5,13 @@ import SideBarRow from "../SideBarIRow";
 
 const RightSideBar = ({ onlineUsers }) => {
   return (
-    <div>
+    <Box
+      sx={{
+        flex: 0.1,
+        background: "red",
+        display: { xs: "none", lg: "block" },
+      }}
+    >
       <Stack direction={"row"} spacing={14}>
         <Typography color=" #808080">Contacts</Typography>
         <Stack direction={"row"} spacing={2}>
@@ -20,7 +26,7 @@ const RightSideBar = ({ onlineUsers }) => {
           return <SideBarRow title={userName} src={userImage} online />;
         })}
       </List>
-    </div>
+    </Box>
   );
 };
 

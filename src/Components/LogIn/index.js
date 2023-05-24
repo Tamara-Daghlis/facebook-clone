@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, Button, Typography, Link } from "@mui/material";
-import logoImg from "../../img/face-book.svg";
 import CustomTextField from "../CustomTextField";
 import styles from "./style.module.css";
 import { useAuth } from "../../Context/AuthContext";
@@ -46,7 +45,11 @@ const LogIn = () => {
   return (
     <Box sx={{ background: "#E1E1E1", padding: 2, height: "100vh" }}>
       <Box>
-        <img src={logoImg} alt="facebook-logo" className={imgStyle}></img>
+        <img
+          src={"/images/face-book.svg"}
+          alt="facebook-logo"
+          className={imgStyle}
+        ></img>
       </Box>
       <Box className={formStyle}>
         <form onSubmit={handleSubmit}>
