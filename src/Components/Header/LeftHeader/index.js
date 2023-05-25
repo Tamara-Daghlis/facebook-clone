@@ -21,7 +21,7 @@ const LeftHeader = () => {
   };
   return (
     <Box sx={{ mr: "20px", display: { xs: "none", md: "flex" } }}>
-      <Avatar src={"/images/Facebook_f_logo"}></Avatar>
+      <Avatar src={"/images/Facebook_f_logo.svg.png"}></Avatar>
       <Search>
         <SearchIcon color="disabled" />
         <InputBase placeholder="Search Facebook" onChange={handleSearch} />

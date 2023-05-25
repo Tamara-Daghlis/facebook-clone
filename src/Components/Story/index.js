@@ -5,6 +5,7 @@ import {
   CardMedia,
   Typography,
   CardContent,
+  Box,
 } from "@mui/material";
 import styled from "@emotion/styled";
 import AddIcon from "@mui/icons-material/Add";
@@ -29,7 +30,7 @@ const IconAvatar = styled(Avatar)({
 });
 
 const CustomCard = styled(Card)({
-  width: " 120px",
+  width: "110px",
   height: "200px",
   boxShadow: "0px 5px 17px -7px rgba(0, 0, 0, 0.75)",
   borderRadius: "10px",
@@ -49,33 +50,35 @@ const CustomTypography = styled(Typography)({
 
 const Story = ({ storyImage, CurrentUserIamge, friendIamge, friendName }) => {
   return (
-    <CustomCard>
-      <CardMedia
-        component="img"
-        image={storyImage || CurrentUserIamge}
-        alt="Paella dish"
-        height={storyImage ? "100%" : "80%"}
-      ></CardMedia>
+    <Box>
+      <CustomCard>
+        <CardMedia
+          component="img"
+          image={storyImage || CurrentUserIamge}
+          alt="Paella dish"
+          height={storyImage ? "100%" : "80%"}
+        ></CardMedia>
 
-      {friendIamge && (
-        <CustomAvatar alt="Remy Sharp" src={friendIamge}></CustomAvatar>
-      )}
+        {friendIamge && (
+          <CustomAvatar alt="Remy Sharp" src={friendIamge}></CustomAvatar>
+        )}
 
-      {CurrentUserIamge && (
-        <IconAvatar color="primary">
-          <AddIcon />
-        </IconAvatar>
-      )}
+        {CurrentUserIamge && (
+          <IconAvatar color="primary">
+            <AddIcon />
+          </IconAvatar>
+        )}
 
-      <CardContent>
-        <CustomTypography
-          color={friendName ? "#FFF" : "#000"}
-          fontSize={"12px"}
-        >
-          {friendName || "Create Story"}
-        </CustomTypography>
-      </CardContent>
-    </CustomCard>
+        <CardContent>
+          <CustomTypography
+            color={friendName ? "#FFF" : "#000"}
+            fontSize={"12px"}
+          >
+            {friendName || "Create Story"}
+          </CustomTypography>
+        </CardContent>
+      </CustomCard>
+    </Box>
   );
 };
 

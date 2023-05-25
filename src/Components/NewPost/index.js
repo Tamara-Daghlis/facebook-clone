@@ -11,7 +11,9 @@ export const CardBox = styled(Box)({
 
 const NewPost = ({ currentUserImage }) => {
   return (
-    <Card sx={{ p: "20px", width: "50%" }}>
+    <Card
+      sx={{ p: "20px", width: { xs: "90%", md: "70%" }, margin: "15px auto" }}
+    >
       <Stack direction={"row"} spacing={2}>
         <Avatar alt="current user" src={currentUserImage}></Avatar>
         <PostDialog />

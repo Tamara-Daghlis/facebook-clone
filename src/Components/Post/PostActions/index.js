@@ -5,7 +5,7 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import { CardBox } from "../../NewPost";
-const PostLikesAndCommints = () => {
+const PostActions = () => {
   const handleLike = () => {
     alert("yeeeeees");
   };
@@ -21,7 +21,6 @@ const PostLikesAndCommints = () => {
             );
           })}
         </List>
-
         <Typography color={"gray"} paddingTop={0.8}>
           50
         </Typography>
@@ -29,7 +28,7 @@ const PostLikesAndCommints = () => {
       <Divider margin={2} variant="middle" />
       <CardBox>
         <Stack direction={"row"} spacing={1} padding={2}>
-          <ThumbUpOutlinedIcon onClick={handleLike} />
+          <ThumbUpOutlinedIcon />
           <Typography>like</Typography>
         </Stack>
         <Stack direction={"row"} spacing={1} padding={2}>
@@ -45,4 +44,4 @@ const PostLikesAndCommints = () => {
   );
 };
 
-export default PostLikesAndCommints;
+export default PostActions;
