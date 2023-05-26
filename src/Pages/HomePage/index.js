@@ -4,7 +4,7 @@ import SideBar from "../../Components/SideBar";
 import Stories from "../../Components/Stories";
 import NewPost from "../../Components/NewPost";
 import RightSideBar from "../../Components/RightSideBar";
-import Posts from "../../Posts";
+import Posts from "../../Components/Stories/Posts";
 
 const HomePage = () => {
   return (

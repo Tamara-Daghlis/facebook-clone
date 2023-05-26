@@ -1,6 +1,6 @@
 import React from "react";
-import Post from "../Components/Post";
-import { usePosts } from "../Context/PostsContext";
+import Post from "../../Post";
+import { usePosts } from "../../../Context/PostsContext";
 
 const Posts = () => {
   const { posts } = usePosts();
