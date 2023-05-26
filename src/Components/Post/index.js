@@ -1,29 +1,33 @@
 import React from "react";
 import { Card, Avatar, Typography, Stack, CardMedia } from "@mui/material";
-
 import PostActions from "./PostActions";
+import Comments from "./Comments";
 
-const Post = ({ userImage, userName, PostIamge }) => {
+const Post = ({ post }) => {
+  const { user, text, image, likes, comments, id } = post;
+
   return (
-    <Card sx={{ width: { xs: "95%", md: "75%" }, margin: "15px auto" }}>
+    <Card
+      sx={{
+        width: { xs: "95%", md: "75%" },
+        margin: "15px auto",
+        borderRadius: "13px",
+      }}
+    >
       <Stack direction={"row"} spacing={2} margin={2}>
-        <Avatar src={userImage} alt="user image"></Avatar>
+        <Avatar src={user.image} alt="user image"></Avatar>
         <Typography paddingTop={1.5} fontWeight={700}>
-          Tamara Daghlis
+          {user.name}
         </Typography>
       </Stack>
-
       <Typography textAlign={"start"} margin={2}>
-        "post text : hiiiiii"
+        {text}
       </Typography>
-
-      <CardMedia
-        component="img"
-        image={PostIamge}
-        alt="post"
-        height={"250px"}
-      />
-      <PostActions />
+      {image && (
+        <CardMedia component="img" image={image} alt="post" height={"250px"} />
+      )}
+      <PostActions likes={likes} />
+      <Comments comments={comments} id={id} />
     </Card>
   );
 };

@@ -4,13 +4,12 @@ import SideBar from "../../Components/SideBar";
 import Stories from "../../Components/Stories";
 import NewPost from "../../Components/NewPost";
 import RightSideBar from "../../Components/RightSideBar";
-import Post from "../../Components/Post";
+import Posts from "../../Posts";
 
 const HomePage = () => {
   return (
     <Stack
       direction={"row"}
-      //   spacing={9}
       marginTop={"64px"}
       sx={{
         background: "#E1E1E1",
@@ -22,7 +21,7 @@ const HomePage = () => {
       <Box sx={{ flex: 1.5 }}>
         <Stories />
         <NewPost />
-        <Post />
+        <Posts />
       </Box>
 
       <RightSideBar />

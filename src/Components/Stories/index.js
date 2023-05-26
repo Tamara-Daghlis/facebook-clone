@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Story from "../Story";
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import axios from "axios";
 import Styled from "@emotion/styled";
+import { useAuth } from "../../Context/AuthContext";
 
 const Stories = ({ CurrentUserIamge }) => {
   const [stories, setStories] = useState();
+
   useEffect(() => {
     axios
       .get("https://run.mocky.io/v3/2d919564-0bdc-4881-9346-6f1ae779e37e")
@@ -13,6 +15,9 @@ const Stories = ({ CurrentUserIamge }) => {
         setStories(response.data.stories);
       });
   }, []);
+
+  const { currentUserInfo } = useAuth();
+  const { currentUserImage } = currentUserInfo;
 
   const StoriesStack = Styled(Stack)({
     width: "650px",
@@ -36,7 +41,7 @@ const Stories = ({ CurrentUserIamge }) => {
   });
   return (
     <StoriesStack direction={"row"}>
-      <Story CurrentUserIamge={CurrentUserIamge}></Story>
+      <Story CurrentUserIamge={currentUserImage}></Story>
       {stories?.map(({ userImage, userName, storyImage }) => {
         return (
           <Story

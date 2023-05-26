@@ -26,7 +26,8 @@ export const SideBarBox = styled(Box)({
 });
 
 const SideBar = () => {
-  const { currentUser } = useAuth;
+  const { currentUserInfo } = useAuth();
+  const { currentUserImage, currentUserName } = currentUserInfo;
 
   return (
     <SideBarBox
@@ -37,7 +38,7 @@ const SideBar = () => {
         },
       }}
     >
-      <SideBarRow />
+      <SideBarRow src={currentUserImage} title={currentUserName} />
       <List>
         {sideBareData.map(({ src, title, id }) => {
           return <SideBarRow key={id} src={src} title={title} />;
