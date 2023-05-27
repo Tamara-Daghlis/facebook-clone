@@ -13,6 +13,8 @@ import Post from "./Components/Post";
 import HomePage from "./Pages/HomePage";
 import Header from "./Components/Header";
 import PostsProvider from "./Context/PostsContext";
+import FriendCard from "./Components/FriendCard";
+import Friends from "./Components/Friends";
 
 function App() {
   return (
@@ -20,7 +22,8 @@ function App() {
       <PostsProvider>
         <div className="App">
           <Header />
-          <HomePage />
+          {/* <HomePage /> */}
+          <Friends />
         </div>
       </PostsProvider>
     </AuthProvider>
