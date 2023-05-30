@@ -17,7 +17,7 @@ const CoverImage = styled(Box)(({ coverImage }) => ({
   margin: "0 auto",
   position: "relative",
   "@media (min-width: 900px)": {
-    width: "70%",
+    width: "75%",
   },
   padding: ".1px",
 }));
