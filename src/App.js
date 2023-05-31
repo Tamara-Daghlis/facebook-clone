@@ -15,6 +15,8 @@ import Header from "./Components/Header";
 import PostsProvider from "./Context/PostsContext";
 import FriendCard from "./Components/FriendCard";
 import Friends from "./Components/Friends";
+import ChatSideBar from "./Components/Chat/ChatSideBar";
+import Chat from "./Components/Chat";
 
 function App() {
   return (
@@ -23,7 +25,8 @@ function App() {
         <div className="App">
           <Header />
           {/* <HomePage /> */}
-          <Friends />
+          {/* <Friends /> */}
+          <Chat />
         </div>
       </PostsProvider>
     </AuthProvider>
