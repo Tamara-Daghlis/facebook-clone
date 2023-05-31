@@ -12,14 +12,17 @@ import NewPost from "./Components/NewPost";
 import Post from "./Components/Post";
 import HomePage from "./Pages/HomePage";
 import Header from "./Components/Header";
+import PostsProvider from "./Context/PostsContext";
 
 function App() {
   return (
     <AuthProvider>
-      <div className="App">
-        <Header />
-        <HomePage />
-      </div>
+      <PostsProvider>
+        <div className="App">
+          <Header />
+          <HomePage />
+        </div>
+      </PostsProvider>
     </AuthProvider>
   );
 }

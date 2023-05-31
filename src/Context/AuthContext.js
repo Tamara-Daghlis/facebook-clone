@@ -6,6 +6,8 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
+import { users } from "../Data/users.js";
+
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -15,6 +17,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
+  const currentUserInfo = users[currentUser?.uid];
 
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -35,6 +38,7 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
+    currentUserInfo,
     login,
     signup,
   };

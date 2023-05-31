@@ -6,27 +6,28 @@ import { sideBareData } from "../../Data/sideBarData";
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 
-const SideBarBox = styled(Box)({
+export const SideBarBox = styled(Box)({
   top: "64px",
   height: "calc(100vh - 64px)",
   position: "sticky",
-  paddingTop: "20px",
+  marginTop: "20px",
   flex: ".5",
-  overflowY: "scroll",
+  "&:hover": { overflowY: "scroll" },
   "&::-webkit-scrollbar": {
     width: "10px",
   },
   "&::-webkit-scrollbar-track": {
-    background: "#cacaca",
+    background: "#c0c0c0",
   },
   "&::-webkit-scrollbar-thumb": {
     borderRadius: "10px",
-    background: "#888",
+    background: "#ced0d4",
   },
 });
 
 const SideBar = () => {
-  const { currentUser } = useAuth;
+  const { currentUserInfo } = useAuth();
+  const { currentUserImage, currentUserName } = currentUserInfo;
 
   return (
     <SideBarBox
@@ -37,8 +38,7 @@ const SideBar = () => {
         },
       }}
     >
-      {/* the src and user name should taken from current user  */}
-      <SideBarRow />
+      <SideBarRow src={currentUserImage} title={currentUserName} />
       <List>
         {sideBareData.map(({ src, title, id }) => {
           return <SideBarRow key={id} src={src} title={title} />;
