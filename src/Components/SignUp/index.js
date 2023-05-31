@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Typography, Divider, Button, Link } from "@mui/material";
 import { useState } from "react";
-import logoImg from "../../img/face-book.svg";
 import styles from "./style.module.css";
 import SignUpInfo from "./SignUpInfo";
 import TextFielSection from "./TextFieldSection";
@@ -58,7 +57,11 @@ const SignUp = () => {
   return (
     <Box sx={{ background: "#E1E1E1", padding: 2 }}>
       <Box>
-        <img src={logoImg} alt="facebook-logo" className={imgStyle}></img>
+        <img
+          src={"/images/face-book.svg"}
+          alt="facebook-logo"
+          className={imgStyle}
+        ></img>
       </Box>
       <Box className={formStyle}>
         <Typography fontSize={"25px"} fontWeight={700}>
