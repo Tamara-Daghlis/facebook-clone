@@ -15,6 +15,9 @@ import Header from "./Components/Header";
 import PostsProvider from "./Context/PostsContext";
 import FriendCard from "./Components/FriendCard";
 import Friends from "./Components/Friends";
+import ProfileHeader from "./Components/ProfileHeader";
+import ProfileFriendsSection from "./Components/ProfileFriendsSection";
+import ProfileBody from "./Components/ProfileBody";
 
 function App() {
   return (
@@ -23,7 +26,9 @@ function App() {
         <div className="App">
           <Header />
           {/* <HomePage /> */}
-          <Friends />
+          {/* <Friends /> */}
+          <ProfileHeader />
+          <ProfileBody />
         </div>
       </PostsProvider>
     </AuthProvider>
