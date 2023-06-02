@@ -17,16 +17,19 @@ import FriendCard from "./Components/FriendCard";
 import Friends from "./Components/Friends";
 import ChatSideBar from "./Components/Chat/ChatSideBar";
 import Chat from "./Components/Chat";
+import AppRoutes from "./Routes/AppRoutes";
 
 function App() {
   return (
     <AuthProvider>
       <PostsProvider>
         <div className="App">
-          <Header />
+          {/* <Header /> */}
           {/* <HomePage /> */}
           {/* <Friends /> */}
-          <Chat />
+          {/* <Chat /> */}
+
+          <AppRoutes />
         </div>
       </PostsProvider>
     </AuthProvider>

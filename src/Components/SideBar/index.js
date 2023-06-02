@@ -5,6 +5,7 @@ import SideBarRow from "../SideBarIRow";
 import { sideBareData } from "../../Data/sideBarData";
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
+import { useNavigate } from "react-router";
 
 export const SideBarBox = styled(Box)({
   top: "64px",
@@ -26,8 +27,22 @@ export const SideBarBox = styled(Box)({
 });
 
 const SideBar = () => {
+  const navigate = useNavigate();
   const { currentUserInfo } = useAuth();
-  const { currentUserImage, currentUserName } = currentUserInfo;
+  let currentUserImage, currentUserName;
+
+  if (currentUserInfo) {
+    currentUserImage = currentUserInfo.currentUserImage;
+    currentUserName = currentUserInfo.currentUserImage;
+  }
+
+  const handleClick = (route) => {
+    navigate(route);
+  };
+
+  const handleProfileClick = () => {
+    navigate("profile");
+  };
 
   return (
     <SideBarBox
@@ -38,10 +53,21 @@ const SideBar = () => {
         },
       }}
     >
-      <SideBarRow src={currentUserImage} title={currentUserName} />
+      <SideBarRow
+        src={currentUserImage}
+        title={currentUserName}
+        onClick={handleProfileClick}
+      />
       <List>
-        {sideBareData.map(({ src, title, id }) => {
-          return <SideBarRow key={id} src={src} title={title} />;
+        {sideBareData.map(({ src, title, id, route }) => {
+          return (
+            <SideBarRow
+              key={id}
+              src={src}
+              title={title}
+              onClick={route ? () => handleClick(route) : undefined}
+            />
+          );
         })}
       </List>
     </SideBarBox>

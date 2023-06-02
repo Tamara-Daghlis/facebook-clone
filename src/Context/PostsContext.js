@@ -12,7 +12,12 @@ const PostsProvider = ({ children }) => {
   const [posts, setPosts] = useState();
 
   const { currentUser, currentUserInfo } = useAuth();
-  const { currentUserName, currentUserImage } = currentUserInfo;
+  let currentUserName, currentUserImage;
+  if (currentUserInfo) {
+    currentUserImage = currentUserInfo.currentUserImage;
+    currentUserName = currentUserInfo.currentUserName;
+  }
+  // const { currentUserName, currentUserImage } = currentUserInfo;
 
   useEffect(() => {
     axios

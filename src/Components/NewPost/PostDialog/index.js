@@ -33,8 +33,12 @@ const PostDialog = () => {
 
   const { addPost } = usePosts();
   const { currentUserInfo } = useAuth();
-  const { currentUserImage, currentUserName } = currentUserInfo;
 
+  let currentUserImage, currentUserName;
+  if (currentUserInfo) {
+    currentUserImage = currentUserInfo.currentUserImage;
+    currentUserName = currentUserInfo.currentUserImage;
+  }
   const handleClickOpen = () => {
     setOpen(true);
   };

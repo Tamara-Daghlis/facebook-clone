@@ -12,7 +12,11 @@ export const CardBox = styled(Box)({
 
 const NewPost = () => {
   const { currentUserInfo } = useAuth();
-  const { currentUserImage, currentUserName } = currentUserInfo;
+  let currentUserImage;
+
+  if (currentUserInfo) {
+    currentUserImage = currentUserInfo.currentUserImage;
+  }
   return (
     <Card
       sx={{

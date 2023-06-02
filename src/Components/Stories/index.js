@@ -17,7 +17,10 @@ const Stories = ({ CurrentUserIamge }) => {
   }, []);
 
   const { currentUserInfo } = useAuth();
-  const { currentUserImage } = currentUserInfo;
+  let currentUserImage;
+  if (currentUserInfo) {
+    currentUserImage = currentUserInfo.currentUserImage;
+  }
 
   const StoriesStack = Styled(Stack)({
     width: "650px",
