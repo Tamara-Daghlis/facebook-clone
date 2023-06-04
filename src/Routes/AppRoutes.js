@@ -14,16 +14,16 @@ const AppRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route index element={<LogIn />} />
-        <Route path="signUp" element={<SignUp />} />
+        <Route path="/signUp" element={<SignUp />} />
         <Route element={<Layout />}>
-          {/* <Route element={<ProtectedRoute />}> */}
-          <Route path="Home" element={<HomePage />} />
-          {/* <Route path="profile" element={<ProfilePage />} /> */}
-          <Route path="chat" element={<ChatPage />} />
-          <Route path="friends" element={<FriendsPage />} />
-          {/* </Route> */}
-
-          {/* <Route path="*" element={<PageNotFound />} /> */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/Home" element={<HomePage />} />
+            {/* <Route path="profile" element={<ProfilePage />} /> */}
+            <Route path="/chat" element={<ChatPage />} />
+            <Route path="/friends" element={<FriendsPage />} />
+          </Route>
+          {/* 
+          <Route path="*" element={<PageNotFound />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

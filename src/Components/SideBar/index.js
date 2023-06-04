@@ -38,10 +38,11 @@ const SideBar = () => {
 
   const handleClick = (route) => {
     navigate(route);
+    console.log(route);
   };
 
   const handleProfileClick = () => {
-    navigate("profile");
+    navigate("/profile");
   };
 
   return (
@@ -65,7 +66,7 @@ const SideBar = () => {
               key={id}
               src={src}
               title={title}
-              onClick={route ? () => handleClick(route) : undefined}
+              onClick={() => handleClick(route)}
             />
           );
         })}

@@ -1,10 +1,10 @@
 import React from "react";
 import { useAuth } from "../Context/AuthContext";
-import { Outlet, Navigate } from "react-router";
+import { Navigate, Outlet } from "react-router";
 
 const ProtectedRoute = () => {
   const { currentUser } = useAuth();
-  return currentUser ? <Navigate to={"/"} /> : <Outlet />;
+  return currentUser ? <Outlet /> : <Navigate to={"/"} />;
 };
 
 export default ProtectedRoute;
