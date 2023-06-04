@@ -17,17 +17,21 @@ import FriendCard from "./Components/FriendCard";
 import Friends from "./Components/Friends";
 import ChatSideBar from "./Components/Chat/ChatSideBar";
 import Chat from "./Components/Chat";
+import ChatProvider from "./Context/ChatContext";
 
 function App() {
   return (
     <AuthProvider>
       <PostsProvider>
-        <div className="App">
-          <Header />
-          {/* <HomePage /> */}
-          {/* <Friends /> */}
-          <Chat />
-        </div>
+        <ChatProvider>
+          <div className="App">
+            <Header />
+            {/* <HomePage /> */}
+            {/* <Friends /> */}
+            {/* <SignUp /> */}
+            <Chat />
+          </div>
+        </ChatProvider>
       </PostsProvider>
     </AuthProvider>
   );

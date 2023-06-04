@@ -11,8 +11,7 @@ export function usePosts() {
 const PostsProvider = ({ children }) => {
   const [posts, setPosts] = useState();
 
-  const { currentUser, currentUserInfo } = useAuth();
-  const { currentUserName, currentUserImage } = currentUserInfo;
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     axios
@@ -29,8 +28,8 @@ const PostsProvider = ({ children }) => {
     const newPost = {
       user: {
         id: currentUser.uid,
-        name: currentUserName,
-        image: currentUserImage,
+        name: currentUser.displayName,
+        image: currentUser.photoURL,
       },
       id: posts.length + 1,
       text: postText,
@@ -49,8 +48,8 @@ const PostsProvider = ({ children }) => {
     const newComment = {
       id: selectedPost.comments.length + 1,
       user: {
-        name: currentUserName,
-        imagePath: currentUserImage,
+        name: currentUser.displayName,
+        imagePath: currentUser.photoURL,
       },
       text: comment,
     };

@@ -11,8 +11,7 @@ export const CardBox = styled(Box)({
 });
 
 const NewPost = () => {
-  const { currentUserInfo } = useAuth();
-  const { currentUserImage, currentUserName } = currentUserInfo;
+  const { currentUser } = useAuth();
   return (
     <Card
       sx={{
@@ -23,7 +22,7 @@ const NewPost = () => {
       }}
     >
       <Stack direction={"row"} spacing={2}>
-        <Avatar alt="current user" src={currentUserImage}></Avatar>
+        <Avatar alt="current user" src={currentUser.photoURL}></Avatar>
         <PostDialog />
       </Stack>
 

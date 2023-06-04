@@ -12,6 +12,7 @@ import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import InfoIcon from "@mui/icons-material/Info";
 import styled from "@emotion/styled";
+import { useChat } from "../../../../Context/ChatContext";
 
 const StyledAppBar = styled(AppBar)({
   background: "#FFF",
@@ -22,13 +23,14 @@ const StyledAppBar = styled(AppBar)({
 });
 
 const ChatWindowNav = () => {
+  const { user } = useChat();
   return (
     <StyledAppBar>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Box sx={{ display: "flex" }}>
-          <Avatar src="" />
+          <Avatar src={user?.user.photoURL} />
           <Typography marginLeft={1} paddingTop={1} color={"#000"}>
-            friend name
+            {user?.user.displayName}
           </Typography>
         </Box>
 
