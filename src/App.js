@@ -15,9 +15,9 @@ import Header from "./Components/Header";
 import PostsProvider from "./Context/PostsContext";
 import FriendCard from "./Components/FriendCard";
 import Friends from "./Components/Friends";
-import ProfileHeader from "./Components/ProfileHeader";
-import ProfileFriendsSection from "./Components/ProfileFriendsSection";
-import ProfileBody from "./Components/ProfileBody";
+import ChatSideBar from "./Components/Chat/ChatSideBar";
+import Chat from "./Components/Chat";
+
 
 function App() {
   return (
@@ -27,9 +27,8 @@ function App() {
           <Header />
           {/* <HomePage /> */}
           {/* <Friends /> */}
-          <ProfileHeader />
-          <ProfileBody />
-        </div>
+          <Chat />
+       </div>
       </PostsProvider>
     </AuthProvider>
   );
