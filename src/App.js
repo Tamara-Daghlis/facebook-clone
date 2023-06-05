@@ -18,6 +18,7 @@ import Friends from "./Components/Friends";
 import ChatSideBar from "./Components/Chat/ChatSideBar";
 import Chat from "./Components/Chat";
 
+
 function App() {
   return (
     <AuthProvider>
@@ -27,7 +28,7 @@ function App() {
           {/* <HomePage /> */}
           {/* <Friends /> */}
           <Chat />
-        </div>
+       </div>
       </PostsProvider>
     </AuthProvider>
   );
