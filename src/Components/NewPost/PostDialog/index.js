@@ -34,11 +34,6 @@ const PostDialog = () => {
   const { addPost } = usePosts();
   const { currentUser } = useAuth();
 
-  let currentUserImage, currentUserName;
-  if (currentUserInfo) {
-    currentUserImage = currentUserInfo.currentUserImage;
-    currentUserName = currentUserInfo.currentUserImage;
-  }
   const handleClickOpen = () => {
     setOpen(true);
   };
