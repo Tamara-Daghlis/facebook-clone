@@ -2,13 +2,13 @@ import React from "react";
 import Post from "../Post";
 import { usePosts } from "../../Context/PostsContext";
 
-const Posts = () => {
+const Posts = ({ margin, width }) => {
   const { posts } = usePosts();
 
   return (
     <div>
       {posts?.map((post) => {
-        return <Post post={post} key={post.id} />;
+        return <Post post={post} key={post.id} margin={margin} width={width} />;
       })}
     </div>
   );

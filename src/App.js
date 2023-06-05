@@ -29,6 +29,7 @@ function App() {
             {/* <Header /> */}
             {/* <HomePage /> */}
             {/* <Friends /> */}
+
             {/* <Chat /> */}
 
             <AppRoutes />
