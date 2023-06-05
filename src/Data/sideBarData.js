@@ -3,6 +3,7 @@ export const sideBareData = [
     id: 1,
     title: "Friends",
     src: "/images/sideBarImages/friends.png",
+    route: "/friends",
   },
 
   {
@@ -15,6 +16,7 @@ export const sideBareData = [
     id: 3,
     title: "Messenger",
     src: "/images/sideBarImages/messenger.png",
+    route: "/chat",
   },
 
   {

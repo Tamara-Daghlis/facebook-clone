@@ -8,6 +8,7 @@ import SelectSection from "./SelectSection";
 import RadioSection from "./RadioSection";
 import { validate } from "../SignUp/signUpValidation";
 import { useAuth } from "../../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [userInfo, setUserInfo] = useState({
@@ -29,6 +30,7 @@ const SignUp = () => {
 
   const { imgStyle, formStyle } = styles;
   const { signup } = useAuth();
+  const navigate = useNavigate();
 
   const handleInput = (e) => {
     setUserInfo({
@@ -43,6 +45,7 @@ const SignUp = () => {
     try {
       setLoading(true);
       await signup(email, password, firstName, lastName);
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -55,7 +58,12 @@ const SignUp = () => {
   };
 
   return (
-    <Box sx={{ background: "#E1E1E1", padding: 2 }}>
+    <Box
+      sx={{
+        background: "#E1E1E1",
+        padding: 2,
+      }}
+    >
       <Box>
         <img
           src={"/images/face-book.svg"}
@@ -124,7 +132,7 @@ const SignUp = () => {
           </Button>
 
           <Link
-            href="#"
+            href="/"
             underline="none"
             color={"blue"}
             display={"block"}
