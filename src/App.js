@@ -19,22 +19,23 @@ import ChatSideBar from "./Components/Chat/ChatSideBar";
 import Chat from "./Components/Chat";
 import AppRoutes from "./Routes/AppRoutes";
 
+import ChatProvider from "./Context/ChatContext";
 
 function App() {
   return (
     <AuthProvider>
       <PostsProvider>
-        <div className="App">
-          {/* <Header /> */}
-          {/* <HomePage /> */}
-          {/* <Friends /> */}
+        <ChatProvider>
+          <div className="App">
+            {/* <Header /> */}
+            {/* <HomePage /> */}
+            {/* <Friends /> */}
 
-          {/* <Chat /> */}
+            {/* <Chat /> */}
 
-          <AppRoutes />
-        </div>
-
-
+            <AppRoutes />
+          </div>
+        </ChatProvider>
       </PostsProvider>
     </AuthProvider>
   );
