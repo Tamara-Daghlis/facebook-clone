@@ -20,8 +20,8 @@ const HomePage = () => {
       <SideBar />
       <Box sx={{ flex: 1.5 }}>
         <Stories />
-        <NewPost />
-        <Posts />
+        <NewPost margin={"15px auto"} width={"70%"} />
+        <Posts margin={"15px auto"} width={"75%"} />
       </Box>
 
       <RightSideBar />

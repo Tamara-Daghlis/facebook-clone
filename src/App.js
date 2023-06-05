@@ -19,6 +19,7 @@ import ChatSideBar from "./Components/Chat/ChatSideBar";
 import Chat from "./Components/Chat";
 import AppRoutes from "./Routes/AppRoutes";
 
+
 function App() {
   return (
     <AuthProvider>
@@ -27,10 +28,13 @@ function App() {
           {/* <Header /> */}
           {/* <HomePage /> */}
           {/* <Friends /> */}
+
           {/* <Chat /> */}
 
           <AppRoutes />
         </div>
+
+
       </PostsProvider>
     </AuthProvider>
   );
