@@ -37,10 +37,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-const SideBarRow = ({ src, title, online }) => {
+const SideBarRow = ({ src, title, online, onClick }) => {
   return (
     <div>
-      <ListItemButton>
+      <ListItemButton onClick={onClick}>
         {online ? (
           <StyledBadge
             overlap="circular"

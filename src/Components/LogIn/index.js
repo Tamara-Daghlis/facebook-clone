@@ -3,6 +3,7 @@ import { Box, Button, Typography, Link } from "@mui/material";
 import CustomTextField from "../CustomTextField";
 import styles from "./style.module.css";
 import { useAuth } from "../../Context/AuthContext";
+import { useNavigate } from "react-router";
 
 const LogIn = () => {
   const [logInInfo, setLogInInfo] = useState({
@@ -13,6 +14,7 @@ const LogIn = () => {
   const [error, setError] = useState();
 
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const { email, password } = logInInfo;
   const { imgStyle, formStyle } = styles;
@@ -31,6 +33,7 @@ const LogIn = () => {
       setError("");
       setLoading(true);
       await login(email, password);
+      navigate("Home");
     } catch (error) {
       setError("Failed to log in !");
       setLogInInfo({
@@ -43,8 +46,14 @@ const LogIn = () => {
   }
 
   return (
-    <Box sx={{ background: "#E1E1E1", padding: 2, height: "100vh" }}>
-      <Box>
+    <Box
+      sx={{
+        background: "#E1E1E1",
+        padding: 2,
+        height: "100vh",
+      }}
+    >
+      <Box sx={{ mt: "50px" }}>
         <img
           src={"/images/face-book.svg"}
           alt="facebook-logo"
@@ -95,7 +104,7 @@ const LogIn = () => {
             Forgot account? ·
           </Link>
           <Link
-            href="#"
+            href="signUp"
             underline="hover"
             display={"inline-block"}
             marginTop={2}

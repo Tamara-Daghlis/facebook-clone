@@ -17,6 +17,7 @@ import FriendCard from "./Components/FriendCard";
 import Friends from "./Components/Friends";
 import ChatSideBar from "./Components/Chat/ChatSideBar";
 import Chat from "./Components/Chat";
+import AppRoutes from "./Routes/AppRoutes";
 
 
 function App() {
@@ -24,11 +25,16 @@ function App() {
     <AuthProvider>
       <PostsProvider>
         <div className="App">
-          <Header />
+          {/* <Header /> */}
           {/* <HomePage /> */}
           {/* <Friends /> */}
-          <Chat />
-       </div>
+
+          {/* <Chat /> */}
+
+          <AppRoutes />
+        </div>
+
+
       </PostsProvider>
     </AuthProvider>
   );

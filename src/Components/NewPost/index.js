@@ -12,7 +12,13 @@ export const CardBox = styled(Box)({
 
 const NewPost = ({ margin, width }) => {
   const { currentUserInfo } = useAuth();
-  const { currentUserImage } = currentUserInfo;
+
+  let currentUserImage;
+
+  if (currentUserInfo) {
+    currentUserImage = currentUserInfo.currentUserImage;
+  }
+
   return (
     <Card
       sx={{
