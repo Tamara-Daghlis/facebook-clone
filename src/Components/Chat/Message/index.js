@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Avatar, Box, Typography } from "@mui/material";
+import { useAuth } from "../../../Context/AuthContext";
+import { useChat } from "../../../Context/ChatContext";
 
-const Message = ({ isOwner }) => {
+const Message = ({ message }) => {
+  const { currentUser } = useAuth();
+  const { user } = useChat();
+  const isOwner = message?.senderId === currentUser.uid;
+
+  const ref = useRef();
+
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  }, [message]);
+
   return (
     <Box
       sx={{
@@ -10,8 +22,9 @@ const Message = ({ isOwner }) => {
         flexDirection: isOwner ? "row" : "row-reverse",
         padding: "10px",
       }}
+      ref={ref}
     >
-      <Avatar src="" />
+      <Avatar src={isOwner ? currentUser.photoURL : user.user.photoURL} />
       <Box
         sx={{
           display: "flex",
@@ -31,9 +44,9 @@ const Message = ({ isOwner }) => {
             marginBottom: "5px",
           }}
         >
-          Message Content
+          {message?.text}
         </Typography>
-        <img src="/images/download.png" alt="" />
+        {message?.img && <img src={message?.img} alt="" />}
       </Box>
     </Box>
   );

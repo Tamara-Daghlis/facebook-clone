@@ -32,7 +32,7 @@ const PostDialog = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const { addPost } = usePosts();
-  const { currentUserInfo } = useAuth();
+  const { currentUser } = useAuth();
 
   let currentUserImage, currentUserName;
   if (currentUserInfo) {
@@ -63,7 +63,7 @@ const PostDialog = () => {
   return (
     <div>
       <AddNewPostButton variant="contained" onClick={handleClickOpen} fullWidth>
-        {` What's on your mind, ${currentUserName} ?`}
+        {` What's on your mind, ${currentUser.displayName} ?`}
       </AddNewPostButton>
 
       <Dialog open={open} onClose={handleClose} fullWidth>
@@ -82,7 +82,10 @@ const PostDialog = () => {
         <Divider />
 
         <DialogContent>
-          <SideBarRow src={currentUserImage} title={currentUserName} />
+          <SideBarRow
+            src={currentUser.photoURL}
+            title={currentUser.displayName}
+          />
           <TextField
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -94,7 +97,7 @@ const PostDialog = () => {
               "& fieldset": { border: "none" },
               mb: selectedImage ? "10px" : "80px",
             }}
-            placeholder={` What's on your mind, ${currentUserName} ?`}
+            placeholder={` What's on your mind, ${currentUser.displayName} ?`}
           />
 
           {selectedImage && (

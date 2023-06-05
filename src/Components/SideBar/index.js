@@ -28,13 +28,7 @@ export const SideBarBox = styled(Box)({
 
 const SideBar = () => {
   const navigate = useNavigate();
-  const { currentUserInfo } = useAuth();
-  let currentUserImage, currentUserName;
-
-  if (currentUserInfo) {
-    currentUserImage = currentUserInfo.currentUserImage;
-    currentUserName = currentUserInfo.currentUserImage;
-  }
+  const { currentUser } = useAuth();
 
   const handleClick = (route) => {
     navigate(route);
@@ -55,8 +49,8 @@ const SideBar = () => {
       }}
     >
       <SideBarRow
-        src={currentUserImage}
-        title={currentUserName}
+        src={currentUser.photoURL}
+        title={currentUser.displayName}
         onClick={handleProfileClick}
       />
       <List>

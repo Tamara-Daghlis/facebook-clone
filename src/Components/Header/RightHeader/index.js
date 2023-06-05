@@ -5,12 +5,7 @@ import { useNavigate } from "react-router";
 
 const RightHeader = () => {
   const navigate = useNavigate();
-  const { currentUserInfo } = useAuth();
-
-  let currentUserImage;
-  if (currentUserInfo) {
-    currentUserImage = currentUserInfo.currentUserImage;
-  }
+  const { currentUser } = useAuth();
 
   const handleGoToChats = () => {
     navigate("chat");
@@ -26,7 +21,7 @@ const RightHeader = () => {
         <Avatar src={"/images/messengersvg.svg"} />
       </IconButton>
       <IconButton onClick={handleGoToProfile}>
-        <Avatar src={currentUserImage} />
+        <Avatar src={currentUser.photoURL} />
       </IconButton>
     </Stack>
   );

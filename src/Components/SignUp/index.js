@@ -44,7 +44,7 @@ const SignUp = () => {
 
     try {
       setLoading(true);
-      await signup(email, password);
+      await signup(email, password, firstName, lastName);
       navigate("/");
     } catch (error) {
       console.error(error);
