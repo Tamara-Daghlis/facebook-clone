@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  signOut,
 } from "firebase/auth";
 import { getCurrentUserImage } from "../Data/currentUserImage.js";
 import { doc, setDoc } from "firebase/firestore";
@@ -53,6 +54,10 @@ export function AuthProvider({ children }) {
     return signInWithEmailAndPassword(auth, email, password);
   }
 
+  function logOut() {
+    return signOut(auth);
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
@@ -66,6 +71,7 @@ export function AuthProvider({ children }) {
     currentUser,
     login,
     signup,
+    logOut,
   };
 
   return (
