@@ -57,10 +57,16 @@ const ChatSideBar = () => {
     handleSelect(currentUser, selectedUser, setUserName, setSelectedUser);
   };
   return (
-    <Box sx={{ flex: 1, borderRight: "1px solid #eff2f5" }}>
+    <Box
+      sx={{
+        flex: { xs: 0.7, md: 1 },
+        borderRight: "1px solid #eff2f5",
+        pt: { xs: "20px", md: "0px" },
+      }}
+    >
       <Box
         sx={{
-          display: "flex",
+          display: { xs: "none", md: "flex" },
           justifyContent: "space-between",
           padding: "10px",
         }}

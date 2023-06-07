@@ -13,15 +13,17 @@ const Comment = ({ comment }) => {
   const { user, text } = comment;
 
   return (
-    <Stack direction={"row"} spacing={1.5} padding={1.5}>
-      <Avatar src={user?.imagePath} />
-      <CommentBox>
-        <Typography fontWeight={700} fontSize={"15px"}>
-          {user?.name}
-        </Typography>
-        <Typography>{text}</Typography>
-      </CommentBox>
-    </Stack>
+    text && (
+      <Stack direction={"row"} spacing={1.5} padding={1.5}>
+        <Avatar src={user?.imagePath} />
+        <CommentBox>
+          <Typography fontWeight={700} fontSize={"15px"}>
+            {user?.name}
+          </Typography>
+          <Typography>{text}</Typography>
+        </CommentBox>
+      </Stack>
+    )
   );
 };
 

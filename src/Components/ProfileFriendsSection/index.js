@@ -13,6 +13,10 @@ const ProfileFriendsSectionBox = styled(Box)({
   height: "12%",
   position: "sticky",
   top: "50px",
+
+  "@media (max-width: 899px)": {
+    display: "none",
+  },
 });
 
 const ProfileFriendsSection = () => {
@@ -33,7 +37,7 @@ const ProfileFriendsSection = () => {
         sx={{ justifyContent: "space-between", p: "0px 20px" }}
       >
         <Typography fontWeight={700}>Friends</Typography>
-        <Link href="#" underline="none" marginRight={"20px"}>
+        <Link href="/friends" underline="none" marginRight={"20px"}>
           See all friends
         </Link>
       </Stack>

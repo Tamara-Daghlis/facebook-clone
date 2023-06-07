@@ -24,6 +24,7 @@ const StyledAppBar = styled(AppBar)({
 
 const ChatWindowNav = () => {
   const { user } = useChat();
+
   return (
     <StyledAppBar>
       <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -34,7 +35,11 @@ const ChatWindowNav = () => {
           </Typography>
         </Box>
 
-        <Stack direction={"row"} spacing={1}>
+        <Stack
+          direction={"row"}
+          spacing={1}
+          display={{ xs: "none", md: "flex" }}
+        >
           {[
             <PhoneEnabledIcon color={"primary"} />,
             <VideoCallIcon color={"primary"} />,

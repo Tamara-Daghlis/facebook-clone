@@ -11,6 +11,7 @@ import SendIcon from "@mui/icons-material/Send";
 import styled from "@emotion/styled";
 import Comment from "../Comment";
 import { usePosts } from "../../../Context/PostsContext";
+import { useAuth } from "../../../Context/AuthContext";
 
 const WriteCommentBox = styled(Box)({
   display: "flex",
@@ -26,6 +27,7 @@ const WriteCommentBox = styled(Box)({
 const Comments = ({ comments, id }) => {
   const [comment, setComment] = useState("");
   const { addComment } = usePosts();
+  const { currentUser } = useAuth();
 
   const handleInputComment = (e) => {
     setComment(e.target.value);
@@ -39,7 +41,7 @@ const Comments = ({ comments, id }) => {
     <div>
       <Divider margin={2} variant="middle" />
       <Stack direction={"row"} spacing={1.5} padding={2}>
-        <Avatar src={""}></Avatar>
+        <Avatar src={currentUser.photoURL}></Avatar>
         <WriteCommentBox>
           <InputBase
             placeholder="Write a comment..."

@@ -5,8 +5,10 @@ import Stories from "../../Components/Stories";
 import NewPost from "../../Components/NewPost";
 import RightSideBar from "../../Components/RightSideBar";
 import Posts from "../../Components/Posts";
+import { usePosts } from "../../Context/PostsContext";
 
 const HomePage = () => {
+  const { posts } = usePosts();
   return (
     <Stack
       direction={"row"}
@@ -21,7 +23,7 @@ const HomePage = () => {
       <Box sx={{ flex: 1.5 }}>
         <Stories />
         <NewPost margin={"15px auto"} width={"70%"} />
-        <Posts margin={"15px auto"} width={"75%"} />
+        <Posts margin={"15px auto"} width={"75%"} posts={posts} />
       </Box>
 
       <RightSideBar />

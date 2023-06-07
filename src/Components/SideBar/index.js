@@ -27,8 +27,8 @@ export const SideBarBox = styled(Box)({
 });
 
 const SideBar = () => {
-  const { currentUser } = useAuth();
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
 
   const handleClick = (route) => {
     navigate(route);

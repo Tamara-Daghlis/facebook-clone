@@ -19,8 +19,7 @@ const CustomBox = styled(Box)({
 
 const UserInfo = () => {
   const [friends, setFriends] = useState();
-  const { currentUserInfo } = useAuth();
-  const { currentUserName } = currentUserInfo;
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     axios
@@ -32,7 +31,7 @@ const UserInfo = () => {
   return (
     <CustomBox>
       <Typography fontSize={"25px"} fontWeight={700}>
-        {currentUserName}
+        {currentUser.displayName}
       </Typography>
       <Box sx={{ display: { xs: "none", md: "block" } }}>
         <Typography

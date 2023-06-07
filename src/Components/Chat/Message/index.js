@@ -19,7 +19,7 @@ const Message = ({ message }) => {
       sx={{
         display: "flex",
         marginBottom: "10px",
-        flexDirection: isOwner ? "row" : "row-reverse",
+        flexDirection: isOwner ? "row-reverse" : "row",
         padding: "10px",
       }}
       ref={ref}
@@ -30,22 +30,26 @@ const Message = ({ message }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: isOwner ? "flex-start" : "flex-end",
-          marginLeft: isOwner ? "10px" : "0px",
-          marginRight: isOwner ? "0px" : "10px",
+          marginLeft: isOwner ? "0px" : "10px",
+          marginRight: isOwner ? "10px" : "0px",
         }}
       >
-        <Typography
-          sx={{
-            background: isOwner ? "#eff2f5" : "#6A5ACD",
-            color: isOwner ? "#000" : "#FFF",
-            borderRadius: isOwner ? "0px 10px 10px 10px" : "10px 0px 10px 10px",
-            maxWidth: "max-content",
-            padding: "10px",
-            marginBottom: "5px",
-          }}
-        >
-          {message?.text}
-        </Typography>
+        {message?.text && (
+          <Typography
+            sx={{
+              background: isOwner ? "#6A5ACD" : "#eff2f5",
+              color: isOwner ? "#FFF" : "#000",
+              borderRadius: isOwner
+                ? "10px 0px 10px 10px"
+                : "0px 10px 10px 10px",
+              maxWidth: "max-content",
+              padding: "10px",
+              marginBottom: "5px",
+            }}
+          >
+            {message?.text}
+          </Typography>
+        )}
         {message?.img && <img src={message?.img} alt="" />}
       </Box>
     </Box>
