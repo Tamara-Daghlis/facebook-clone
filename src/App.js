@@ -26,12 +26,6 @@ function App() {
       <ChatProvider>
         <PostsProvider>
           <div className="App">
-            {/* <Header /> */}
-            {/* <HomePage /> */}
-            {/* <Friends /> */}
-
-            {/* <Chat /> */}
-
             <AppRoutes />
           </div>
         </PostsProvider>

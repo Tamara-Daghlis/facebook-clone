@@ -20,6 +20,7 @@ const RightHeader = () => {
       <IconButton onClick={handleGoToChats}>
         <Avatar src={"/images/messengersvg.svg"} />
       </IconButton>
+
       <IconButton onClick={handleGoToProfile}>
         <Avatar src={currentUser.photoURL} />
       </IconButton>
