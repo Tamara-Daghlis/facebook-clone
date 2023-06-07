@@ -1,11 +1,11 @@
 import React from "react";
-import { Stack, IconButton, Avatar } from "@mui/material";
+import { Stack, IconButton, Avatar, Box, Typography } from "@mui/material";
 import { useAuth } from "../../../Context/AuthContext";
 import { useNavigate } from "react-router";
 
 const RightHeader = () => {
   const navigate = useNavigate();
-  const { currentUser } = useAuth();
+  const { currentUser, logOut } = useAuth();
 
   const handleGoToChats = () => {
     navigate("chat");
@@ -15,6 +15,11 @@ const RightHeader = () => {
     navigate("profile");
   };
 
+  const handleLogOut = () => {
+    logOut();
+    navigate("/");
+  };
+
   return (
     <Stack direction={"row"} spacing={1}>
       <IconButton onClick={handleGoToChats}>
@@ -22,7 +27,10 @@ const RightHeader = () => {
       </IconButton>
 
       <IconButton onClick={handleGoToProfile}>
-        <Avatar src={currentUser.photoURL} />
+        <Avatar src={currentUser?.photoURL} />
+      </IconButton>
+      <IconButton onClick={handleLogOut}>
+        <Typography>Log Out</Typography>
       </IconButton>
     </Stack>
   );
