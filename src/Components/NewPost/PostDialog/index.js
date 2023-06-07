@@ -99,8 +99,8 @@ const PostDialog = () => {
             <img
               src={selectedImage}
               alt="post"
-              width={"300px"}
-              height={"300px"}
+              width={"150px"}
+              height={"150px"}
             ></img>
           )}
 

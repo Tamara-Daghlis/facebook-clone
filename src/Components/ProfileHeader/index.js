@@ -34,15 +34,18 @@ const UserPorfileImage = styled(Avatar)({
 });
 
 const ProfileHeader = () => {
-  const { currentUserInfo } = useAuth();
-  const { currentUserImage, coverImage } = currentUserInfo;
+  const { currentUser } = useAuth();
 
   return (
     <Box sx={{ height: "400px", marginTop: "60px" }}>
-      <CoverImage coverImage={coverImage}>
-        <UserPorfileImage src={currentUserImage} />
+      <CoverImage
+        coverImage={
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqPIb2laUUpX_OxX-8bDszMrymTnOgcRe5wQ&usqp=CAU"
+        }
+      >
+        <UserPorfileImage src={currentUser.photoURL} />
         <UserInfo />
-        <ProfileHeaderButtons />
+        {/* <ProfileHeaderButtons /> */}
       </CoverImage>
       <ProfileTabs />
     </Box>

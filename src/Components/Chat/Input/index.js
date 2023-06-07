@@ -33,27 +33,33 @@ const Input = () => {
   const { currentUser } = useAuth();
   const { user } = useChat();
 
-  const handleSearch = (e) => {
-    setText(e.target.value);
+  const handleSearch = (event) => {
+    setText(event.target.value);
+  };
+
+  const handleUploadImage = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const imageUrl = reader.result;
+        setImg(imageUrl);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleSend = async () => {
     if (img) {
-      const reader = new FileReader();
-      reader.onload = async (event) => {
-        const imgData = event.target.result;
-
-        await updateDoc(doc(db, "chats", user.chatId), {
-          messages: arrayUnion({
-            id: uuid(),
-            text,
-            senderId: currentUser.uid,
-            date: Timestamp.now(),
-            img: imgData,
-          }),
-        });
-      };
-      reader.readAsDataURL(img);
+      await updateDoc(doc(db, "chats", user.chatId), {
+        messages: arrayUnion({
+          id: uuid(),
+          text,
+          senderId: currentUser.uid,
+          date: Timestamp.now(),
+          img: img,
+        }),
+      });
     } else {
       await updateDoc(doc(db, "chats", user.chatId), {
         messages: arrayUnion({
@@ -85,21 +91,22 @@ const Input = () => {
   return (
     <Stack direction={"row"} spacing={2}>
       <MessageInput>
-        <InputBase placeholder="Aa" onChange={handleSearch} />
+        <InputBase placeholder="Aa" onChange={handleSearch} value={text} />
       </MessageInput>
       <label htmlFor="upload-image">
+        <IconButton component="span">
+          <PermMediaIcon />
+        </IconButton>
         <input
           id="upload-image"
           type="file"
           accept="image/*"
           style={{ display: "none" }}
-          onChange={(e) => setImg(e.target.files[0])}
+          onChange={handleUploadImage}
         />
-        <IconButton>
-          <PermMediaIcon />
-        </IconButton>
       </label>
-      <IconButton onClick={handleSend}>
+
+      <IconButton onClick={handleSend} disabled={!(text || img)}>
         <SendIcon />
       </IconButton>
     </Stack>

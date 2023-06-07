@@ -16,11 +16,7 @@ const Stories = ({ CurrentUserIamge }) => {
       });
   }, []);
 
-  const { currentUserInfo } = useAuth();
-  let currentUserImage;
-  if (currentUserInfo) {
-    currentUserImage = currentUserInfo.currentUserImage;
-  }
+  const { currentUser } = useAuth();
 
   const StoriesStack = Styled(Stack)({
     width: "650px",
@@ -44,7 +40,7 @@ const Stories = ({ CurrentUserIamge }) => {
   });
   return (
     <StoriesStack direction={"row"}>
-      <Story CurrentUserIamge={currentUserImage}></Story>
+      <Story CurrentUserIamge={currentUser.photoURL}></Story>
       {stories?.map(({ userImage, userName, storyImage }) => {
         return (
           <Story
