@@ -13,7 +13,7 @@ const ProfileTabs = () => {
       <Tabs
         value={value}
         onChange={handleChange}
-        aria-label="prfile tabs"
+        aria-label="profile tabs"
         sx={{ m: "0px auto", width: "70%" }}
       >
         {["Posts", "About", "Friends", "Photos", "Videos", "Reels"].map(

@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, IconButton, Avatar, Box, Typography } from "@mui/material";
+import { Stack, IconButton, Avatar, Typography } from "@mui/material";
 import { useAuth } from "../../../Context/AuthContext";
 import { useNavigate } from "react-router";
 
@@ -23,7 +23,7 @@ const RightHeader = () => {
   return (
     <Stack direction={"row"} spacing={1}>
       <IconButton onClick={handleGoToChats}>
-        <Avatar src={"/images/messengersvg.svg"} />
+        <Avatar src={"/images/messenger.svg"} />
       </IconButton>
 
       <IconButton onClick={handleGoToProfile}>

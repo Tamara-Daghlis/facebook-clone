@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Box, Stack, Typography, Link, Paper } from "@mui/material";
+import { Box, Stack, Typography, Link } from "@mui/material";
 import axios from "axios";
-import FriendSectionPaper from "./FriendSectionPapre";
+import FriendSectionPaper from "./FriendSectionPaper";
 import styled from "@emotion/styled";
 
 const ProfileFriendsSectionBox = styled(Box)({
@@ -9,7 +9,7 @@ const ProfileFriendsSectionBox = styled(Box)({
   padding: "20px 0px",
   flex: 1.1,
   background: "#FFF",
-  marginTop: "20px",
+  marginTop: "30px",
   height: "12%",
   position: "sticky",
   top: "50px",

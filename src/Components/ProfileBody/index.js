@@ -9,7 +9,7 @@ import { useAuth } from "../../Context/AuthContext";
 const ProfileBody = () => {
   const { posts } = usePosts();
   const { currentUser } = useAuth();
-  const filterdPosts = posts?.filter(
+  const filteredPosts = posts?.filter(
     (post) => post.user.id === currentUser.uid
   );
   return (
@@ -24,9 +24,9 @@ const ProfileBody = () => {
         }}
       >
         <ProfileFriendsSection />
-        <Box sx={{ flex: 2.5 }}>
-          <NewPost margin={"25px 15px"} width={"95%"} />
-          <Posts margin={"25px 15px"} width={"100%"} posts={filterdPosts} />
+        <Box sx={{ flex: 2.5, margin: { xs: "15px 0px", md: "20px 15px" } }}>
+          <NewPost width={"95%"} />
+          <Posts width={"100%"} posts={filteredPosts} />
         </Box>
       </Box>
     </Box>

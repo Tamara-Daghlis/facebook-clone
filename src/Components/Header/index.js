@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, IconButton, Drawer, List } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Drawer } from "@mui/material";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import RightHeader from "./RightHeader";
 import LeftHeader from "./LeftHeader";

@@ -40,11 +40,11 @@ const Stories = ({ CurrentUserIamge }) => {
   });
   return (
     <StoriesStack direction={"row"}>
-      <Story CurrentUserIamge={currentUser.photoURL}></Story>
+      <Story CurrentUserImage={currentUser.photoURL}></Story>
       {stories?.map(({ userImage, userName, storyImage }) => {
         return (
           <Story
-            friendIamge={userImage}
+            friendImage={userImage}
             friendName={userName}
             storyImage={storyImage}
           ></Story>

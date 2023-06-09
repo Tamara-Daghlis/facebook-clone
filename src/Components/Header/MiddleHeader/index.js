@@ -22,12 +22,12 @@ const MiddleHeader = () => {
       aria-label="icon tabs"
       sx={{ display: { xs: "none", md: "flex" } }}
     >
-      {MiddleHeaderData.map(({ icon, lable }, index) => {
+      {MiddleHeaderData.map(({ icon, label }, index) => {
         return (
           <Tab
             value={index}
             icon={icon}
-            aria-label={lable}
+            aria-label={label}
             onClick={value === 0 ? handleClick : undefined}
           />
         );

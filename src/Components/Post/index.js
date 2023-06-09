@@ -3,15 +3,16 @@ import { Card, Avatar, Typography, Stack, CardMedia } from "@mui/material";
 import PostActions from "./PostActions";
 import Comments from "./Comments";
 
-const Post = ({ post, width, margin }) => {
+const Post = ({ post, width }) => {
   const { user, text, image, likes, comments, id } = post;
 
   return (
     <Card
       sx={{
-        width: { xs: "95%", md: `${width}` },
-        margin: `${margin}`,
-        borderRadius: "13px",
+        width: { xs: "100%", md: `${width}` },
+        borderRadius: { xs: "0px", md: "13px" },
+        marginBottom: "15px",
+        margin: "15px auto",
       }}
     >
       <Stack direction={"row"} spacing={2} margin={2}>

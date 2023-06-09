@@ -7,22 +7,22 @@ import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 export const MiddleHeaderData = [
   {
     icon: <HomeOutlinedIcon />,
-    lable: "Home",
+    label: "Home",
   },
   {
     icon: <AddToQueueOutlinedIcon />,
-    lable: "Watch",
+    label: "Watch",
   },
   {
     icon: <StorefrontOutlinedIcon />,
-    lable: "MarketPlace",
+    label: "MarketPlace",
   },
   {
     icon: <VideogameAssetOutlinedIcon />,
-    lable: "Gaming",
+    label: "Gaming",
   },
   {
     icon: <GroupOutlinedIcon />,
-    lable: "Groups",
+    label: "Groups",
   },
 ];

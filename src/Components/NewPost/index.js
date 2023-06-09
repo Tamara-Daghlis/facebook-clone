@@ -10,15 +10,16 @@ export const CardBox = styled(Box)({
   justifyContent: "space-between",
 });
 
-const NewPost = ({ margin, width }) => {
+const NewPost = ({ width }) => {
   const { currentUser } = useAuth();
   return (
     <Card
       sx={{
-        p: "20px",
-        width: { xs: "90%", md: `${width}` },
-        margin: `${margin}`,
-        borderRadius: "13px",
+        p: "20px ",
+        width: { xs: "97%", md: `${width}` },
+        borderRadius: { xs: "0px", md: "13px" },
+        marginBottom: "15px",
+        margin: "15px auto",
       }}
     >
       <Stack direction={"row"} spacing={2}>

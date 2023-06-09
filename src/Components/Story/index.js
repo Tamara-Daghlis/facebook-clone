@@ -48,27 +48,23 @@ const CustomTypography = styled(Typography)({
   left: "7px",
 });
 
-const Story = ({ storyImage, CurrentUserIamge, friendIamge, friendName }) => {
+const Story = ({ storyImage, CurrentUserImage, friendImage, friendName }) => {
   return (
     <Box>
       <CustomCard>
         <CardMedia
           component="img"
-          image={storyImage || CurrentUserIamge}
+          image={storyImage || CurrentUserImage}
           alt="Paella dish"
           height={storyImage ? "100%" : "80%"}
         ></CardMedia>
-
-        {friendIamge && (
-          <CustomAvatar alt="Remy Sharp" src={friendIamge}></CustomAvatar>
-        )}
-
-        {CurrentUserIamge && (
+        {friendImage && <CustomAvatar alt="" src={friendImage}></CustomAvatar>}
+        {CurrentUserImage && (
           <IconAvatar color="primary">
             <AddIcon />
           </IconAvatar>
         )}
-
+        -
         <CardContent>
           <CustomTypography
             color={friendName ? "#FFF" : "#000"}

@@ -2,7 +2,6 @@ import React from "react";
 import { Box } from "@mui/material";
 import ChatSideBar from "./ChatSideBar";
 import ChatWindow from "./ChatWindow";
-import { Padding } from "@mui/icons-material";
 
 const Chat = () => {
   return (
