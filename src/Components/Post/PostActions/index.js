@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { recationsData } from "../../../Data/ReactionsData";
+import { reactionsData } from "../../../Data/ReactionsData";
 import {
   Stack,
   List,
@@ -31,7 +31,7 @@ const PostActions = ({ likes }) => {
       {likeCount !== 0 && (
         <Stack direction={"row"} spacing={2} marginTop={1}>
           <List sx={{ textAlign: "start", ml: "5px" }}>
-            {recationsData.map(({ icon }) => {
+            {reactionsData.map(({ icon }) => {
               return (
                 <ListItemIcon sx={{ minWidth: "0px" }}>
                   <img src={icon} alt="reaction"></img>
