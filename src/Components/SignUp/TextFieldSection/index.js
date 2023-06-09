@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import CustomTextField from "../../CustomTextField";
 import { Stack } from "@mui/material";
 
-const TextFielSection = memo(
+const TextFieldSection = memo(
   ({
     handleInput,
     firstName,
@@ -58,4 +58,4 @@ const TextFielSection = memo(
   }
 );
 
-export default TextFielSection;
+export default TextFieldSection;

@@ -13,12 +13,13 @@ const RadioSection = memo(({ gender, handleInput }) => {
         name="gender"
         value={gender}
         onChange={handleInput}
+        sx={{ justifyContent: "space-between" }}
       >
         {Gender.map(({ value, label }) => {
           return (
             <FormControlLabel
+              sx={{ margin: 0, justifyContent: "space-around" }}
               classes={{ root: radioStyle }}
-              //   className={radioStyle}
               value={value}
               control={<Radio />}
               label={label}

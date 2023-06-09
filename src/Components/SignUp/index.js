@@ -3,9 +3,9 @@ import { Box, Typography, Divider, Button, Link } from "@mui/material";
 import { useState } from "react";
 import styles from "./style.module.css";
 import SignUpInfo from "./SignUpInfo";
-import TextFielSection from "./TextFieldSection";
 import SelectSection from "./SelectSection";
 import RadioSection from "./RadioSection";
+import TextFieldSection from "./TextFieldSection";
 import { validate } from "../SignUp/signUpValidation";
 import { useAuth } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -43,18 +43,18 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      setLoading(true);
-      await signup(email, password, firstName, lastName);
-      navigate("/");
+      const errors = validate(userInfo);
+      setValidationMessage(errors);
+
+      if (Object.keys(errors).length === 0) {
+        setLoading(true);
+        await signup(email, password, firstName, lastName);
+        navigate("/");
+      }
     } catch (error) {
       console.error(error);
     }
     setLoading(false);
-  };
-
-  const ValidateForm = () => {
-    const errors = validate(userInfo);
-    setValidationMessage(errors);
   };
 
   return (
@@ -62,6 +62,7 @@ const SignUp = () => {
       sx={{
         background: "#E1E1E1",
         padding: 2,
+        height: { xs: "100vh", md: "auto" },
       }}
     >
       <Box>
@@ -81,7 +82,7 @@ const SignUp = () => {
 
         <Divider variant="fullWidth" sx={{ m: 2 }} />
         <form onSubmit={handleSubmitForm}>
-          <TextFielSection
+          <TextFieldSection
             handleInput={handleInput}
             firstName={firstName}
             lastName={lastName}
@@ -125,7 +126,6 @@ const SignUp = () => {
             size="large"
             color="success"
             type="submit"
-            onClick={ValidateForm}
             disabled={loading}
           >
             Sign Up

@@ -1,4 +1,4 @@
-export const recationsData = [
+export const reactionsData = [
   {
     icon: "/images/reactions/like.svg",
   },

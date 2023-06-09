@@ -4,7 +4,6 @@ import { useAuth } from "../../Context/AuthContext";
 import styled from "@emotion/styled";
 import ProfileTabs from "./ProfileTabs";
 import UserInfo from "./UserInfo";
-import ProfileHeaderButtons from "./ProfileHeaderButtons";
 
 const CoverImage = styled(Box)(({ coverImage }) => ({
   width: "100%",
@@ -22,7 +21,7 @@ const CoverImage = styled(Box)(({ coverImage }) => ({
   padding: ".1px",
 }));
 
-const UserPorfileImage = styled(Avatar)({
+const UserProfileImage = styled(Avatar)({
   width: "150px",
   height: "150px",
   position: "absolute",
@@ -43,9 +42,8 @@ const ProfileHeader = () => {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqPIb2laUUpX_OxX-8bDszMrymTnOgcRe5wQ&usqp=CAU"
         }
       >
-        <UserPorfileImage src={currentUser.photoURL} />
+        <UserProfileImage src={currentUser.photoURL} />
         <UserInfo />
-        {/* <ProfileHeaderButtons /> */}
       </CoverImage>
       <ProfileTabs />
     </Box>

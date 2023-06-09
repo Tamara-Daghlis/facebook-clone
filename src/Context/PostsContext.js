@@ -15,7 +15,7 @@ const PostsProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("https://run.mocky.io/v3/a8c2716c-c46b-42dc-8733-38a919175231")
+      .get("https://run.mocky.io/v3/3dffbc98-e9f0-4fe6-a164-5bef80bff62b")
       .then((response) => {
         setPosts(response.data.posts);
       })

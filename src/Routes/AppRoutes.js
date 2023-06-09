@@ -22,8 +22,6 @@ const AppRoutes = () => {
             <Route path="/chat" element={<ChatPage />} />
             <Route path="/friends" element={<FriendsPage />} />
           </Route>
-          {/* 
-          <Route path="*" element={<PageNotFound />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
