@@ -17,9 +17,9 @@ const ChatProvider = ({ children }) => {
 
   const changeUser = (newUser) => {
     const chatId =
-      currentUser.uid > newUser.uid
-        ? currentUser.uid + newUser.uid
-        : newUser.uid + currentUser.uid;
+      currentUser?.uid > newUser.uid
+        ? currentUser?.uid + newUser.uid
+        : newUser.uid + currentUser?.uid;
     setUser({ chatId, user: newUser });
   };
 

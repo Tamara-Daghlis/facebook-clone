@@ -4,6 +4,23 @@ import { useAuth } from "../../../Context/AuthContext";
 import { db } from "../../../config/firebase-config";
 import { onSnapshot, doc } from "firebase/firestore";
 import ChatSideBarItem from "../ChatSideBarItem.js";
+import styled from "@emotion/styled";
+
+const ChatSideBarItemsBox = styled(Box)({
+  overflowY: "auto",
+  height: "80%",
+  "&::-webkit-scrollbar": {
+    width: "10px",
+  },
+  "&::-webkit-scrollbar-track": {
+    background: "#c0c0c0",
+    borderRadius: "10px",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    borderRadius: "10px",
+    background: "#ced0d4",
+  },
+});
 
 const ChatSideBarItems = () => {
   const [chats, setChats] = useState([]);
@@ -24,14 +41,14 @@ const ChatSideBarItems = () => {
   }, [currentUser.uid]);
 
   return (
-    <Box>
+    <ChatSideBarItemsBox>
       {chats &&
         Object.entries(chats)
           ?.sort((a, b) => b[1].date - a[1].date)
           .map((chat) => {
             return <ChatSideBarItem chat={chat} key={chat[0]} />;
           })}
-    </Box>
+    </ChatSideBarItemsBox>
   );
 };
 

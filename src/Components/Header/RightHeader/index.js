@@ -2,10 +2,12 @@ import React from "react";
 import { Stack, IconButton, Avatar, Typography } from "@mui/material";
 import { useAuth } from "../../../Context/AuthContext";
 import { useNavigate } from "react-router";
+import { useChat } from "../../../Context/ChatContext";
 
 const RightHeader = () => {
   const navigate = useNavigate();
   const { currentUser, logOut } = useAuth();
+  const { changeUser } = useChat();
 
   const handleGoToChats = () => {
     navigate("chat");
@@ -17,6 +19,7 @@ const RightHeader = () => {
 
   const handleLogOut = () => {
     logOut();
+    changeUser("null", {});
     navigate("/");
   };
 

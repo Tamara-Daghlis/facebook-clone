@@ -7,7 +7,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../../config/firebase-config";
 
 const MessagesBox = styled(Box)({
-  overflowY: "scroll",
+  overflowY: "auto",
   height: "calc(100% - 140px)",
   "&::-webkit-scrollbar": {
     width: "10px",

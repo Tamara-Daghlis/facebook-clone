@@ -28,12 +28,14 @@ const ChatWindowNav = () => {
   return (
     <StyledAppBar>
       <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Box sx={{ display: "flex" }}>
-          <Avatar src={user?.user.photoURL} />
-          <Typography marginLeft={1} paddingTop={1} color={"#000"}>
-            {user?.user.displayName}
-          </Typography>
-        </Box>
+        {user?.user.photoURL && (
+          <Box sx={{ display: "flex" }}>
+            <Avatar src={user?.user.photoURL} />
+            <Typography marginLeft={1} paddingTop={1} color={"#000"}>
+              {user?.user.displayName}
+            </Typography>
+          </Box>
+        )}
 
         <Stack
           direction={"row"}

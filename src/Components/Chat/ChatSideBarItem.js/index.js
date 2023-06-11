@@ -26,14 +26,14 @@ const ChatSideBarItem = ({ chat }) => {
   };
   return (
     <StyledChatSideBarItem onClick={() => handleSelect(chat[1].userInfo)}>
-      <StyledAvatar src={chat[1].userInfo.photoURL} />
+      <StyledAvatar src={chat[1].userInfo?.photoURL} />
       <Box
         textAlign={"start"}
         marginLeft={"10px"}
         padding={"5px"}
         sx={{ display: { xs: "none", md: "block" } }}
       >
-        <Typography>{chat[1].userInfo.displayName}</Typography>
+        <Typography>{chat[1].userInfo?.displayName}</Typography>
         <Typography color={"#C5C5C5"} fontSize={"12px"} overflow={"hidden"}>
           {chat[1].lastMessage?.text}
         </Typography>
